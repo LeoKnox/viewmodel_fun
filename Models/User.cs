@@ -1,7 +1,19 @@
 namespace viewmodel_fun.Models
 {
-    public class FunText
+    public class funUser
     {
-        public string fString {get; set;}
+        public string fName {get; set;}
+        public string lName {get; set;}
+
+        public funUser()
+        {
+
+        }
+
+        /* public funUser(string fn, string ln)
+        {
+            fName = fn;
+            lName = ln;
+        }*/
     }
 }

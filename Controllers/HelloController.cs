@@ -11,11 +11,8 @@ namespace viewmodel_fun
         [HttpGet("")]
         public IActionResult Index()
         {
-            FunText someText = new FunText()
-            {
-                fString = "this is not fun!"
-            };
-            return View(someText);
+            string someText = new string("This is fun");
+            return View("Index", someText);
         }
 
         [HttpGet("nums")]
@@ -25,7 +22,33 @@ namespace viewmodel_fun
             {
                 3, 5, 7, 2
             };
-            return View(myNums);
+            return View("nums", myNums);
+        }
+
+        [HttpGet("user")]
+        public IActionResult funUser()
+        {
+            funUser fUser = new funUser();
+            {
+                fUser.lName = "Toast";
+                fUser.fName = "Burnt";
+            };
+            return View("user", fUser);
+        }
+
+        [HttpGet("moreusers")]
+        public IActionResult manyUsers()
+        {
+            List<funUser> mUsers = new List<funUser>();
+            {
+                funUser oneUser = new funUser();
+                {
+                    oneUser.fName = "Burnt";
+                    oneUser.lName = "Toast";
+                }
+                mUsers.Add(oneUser);
+            };
+            return View("moreusers", mUsers);
         }
     }
 }
