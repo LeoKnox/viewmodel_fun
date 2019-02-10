@@ -1,10 +1,14 @@
-@model viewmodel_fun.Models.mUsers
+@model List<viewmodel_fun.Models.funUser>
 <html>
     <head>
         <title>List of Users</title>
     </head>
     <body>
         <h2>List of Users!</h2>
-        <p>@Model[0]</p>
+        @{
+            @foreach (var fUser in @Model){
+                <p>@fUser.fName @fUser.lName</p>
+            }
+        }
     </body>
 </html>

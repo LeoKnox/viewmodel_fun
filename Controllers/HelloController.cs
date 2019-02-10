@@ -40,14 +40,18 @@ namespace viewmodel_fun
         public IActionResult manyUsers()
         {
             List<funUser> mUsers = new List<funUser>();
+            funUser oneUser = new funUser();
             {
-                funUser oneUser = new funUser();
-                {
-                    oneUser.fName = "Burnt";
-                    oneUser.lName = "Toast";
-                }
-                mUsers.Add(oneUser);
-            };
+                oneUser.fName = "Burnt";
+                oneUser.lName = "Toast";
+            }
+            funUser twoUser = new funUser();
+            {
+                twoUser.fName = "Runny";
+                twoUser.lName = "Eggs";
+            }
+            mUsers.Add(oneUser);
+            mUsers.Add(twoUser);
             return View("moreusers", mUsers);
         }
     }
