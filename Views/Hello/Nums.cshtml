@@ -1,0 +1,8 @@
+@model int[]
+
+<h2>Here is a list of numbers</h2>
+@{
+    foreach(var num in @Model){
+        <p>@num</p>
+    }
+}
